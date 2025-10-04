@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asteroid Launcher</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="si.css" />
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      direction: ltr !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-app">
+    <div id="sidebar">
+      <h2>IMPACTOR<br>2025</h2>
+      <img id="asteroid-img" src="22.png" alt="Asteroid" />
+      <div id="asteroid-type">Iron Asteroid</div>
+      <div class="slider-group">
+        <label class="slider-label">
+          <span>Diameter</span>
+          <span class="slider-value" id="diameter-value">500</span>
+          <span class="slider-unit">m</span>
+        </label>
+        <input type="range" id="diameter-slider" min="20" max="2000" value="500" step="10">
+      </div>
+      <div class="slider-group">
+        <label class="slider-label">
+          <span>Speed</span>
+          <span class="slider-value" id="velocity-value">17</span>
+          <span class="slider-unit">km/s</span>
+        </label>
+        <input type="range" id="velocity-slider" min="3" max="70" value="17" step="1">
+      </div>
+      <div class="slider-group">
+        <label class="slider-label">
+          <span>Impact angle</span>
+          <span class="slider-value" id="angle-value">45</span>
+          <span class="slider-unit">°</span>
+        </label>
+        <input type="range" id="angle-slider" min="5" max="90" value="45" step="1">
+      </div>
+      <button id="launch-btn" disabled>LAUNCH ASTEROID</button>
+      <div class="hint" id="hint-txt">Select an impact location</div>
+      <div class="options">
+        <span><button class="info-btn" title="Info">ℹ️</button></span>
+        <button  class="launch-btn2"><a href="index.html">BACK</a></button>
+      </div>
+    </div>
+    <div id="map-container">
+      <div id="map"></div>
+      <button id="impact-btn">CLICK IMPACT LOCATION</button>
+    </div>
+
+  </div>
+  <div id="results-panel" style="display:none;">
+  <h3>Impact Results</h3>
+  <div id="results-content">
+    <!-- Stats will appear here -->
+  </div>
+</div>
+<section class="chatbox">
+   <div class="stars"></div>
+
+  <div class="chat-container">
+    <div class="chat-header">🚀 Space Chatbot</div>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="input-area">
+      <div class="options">
+        <button onclick="quickAsk('What is Impactor-2025?')">Impactor?</button>
+        <button onclick="quickAsk('What is the difference between asteroid and comet?')">Asteroid vs Comet</button>
+        <button onclick="quickAsk('Could an asteroid hit Earth in the future?')">Impact Risk</button>
+        <button onclick="quickAsk('What crater would form?')">Crater</button>
+        <button onclick="quickAsk('How do we detect asteroids?')">Detection</button>
+        <button onclick="quickAsk('What size is dangerous?')">Hazard Size</button>
+        <button onclick="quickAsk('Any modern impacts?')">Recent Impact</button>
+        <button onclick="quickAsk('What speed do asteroids travel?')">Speed</button>
+        <button onclick="quickAsk('How can we avoid impact?')">Avoid Impact</button>
+        <button onclick="quickAsk('Give me statistics')">Statistics</button>
+      </div>
+      <div class="input-row">
+        <input type="text" id="userInput" placeholder="Type a question...">
+        <button class="send" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </section>
+  <section class="con2">
+  <div class="stars"></div>
+
+  <section class="container">
+    <h2>🌌 Simulation of a Meteorite Impact on Earth ☄️</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 video">
+      <div class="col">
+        <div class="card h-100 p-3">
+          <video  autoplay loop muted playsinline>
+            <source src="videos/Rare footage of an asteroid impact.mp4" type="video/mp4" >
+          </video>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 p-3">
+          <video  autoplay loop muted playsinline>
+            <source src="videos/Meteorite Crashing at Sea!!! 💥 (1).mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 p-3">
+          <video  autoplay loop muted playsinline>
+            <source src="videos/Asteroid impact event! (60 000 km_h) 🤯☄️😱.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
